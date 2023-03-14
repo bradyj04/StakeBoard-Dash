@@ -22,7 +22,7 @@ function LastRefresh(props) {
     return (
         <div className="update-modal">
             <p className="update-status">
-                {props.dataNew ? (
+                {props.dataNew && isConnected && timeSinceGetData !== 0 ? (
                     <>
                         <img src={Refresh} className="refresh-icon"></img>
                         Updated {timeSinceGetData} seconds ago
