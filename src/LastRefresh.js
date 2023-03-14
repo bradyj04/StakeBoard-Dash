@@ -1,6 +1,5 @@
 import Refresh from "./refresh.svg"
 import { useState, useEffect } from "react";
-import { useAccount } from "wagmi";
 
 function LastRefresh(props) {
     const [timeSinceGetData, setTimeSinceGetData] = useState(0);
@@ -22,7 +21,7 @@ function LastRefresh(props) {
     return (
         <div className="update-modal">
             <p className="update-status">
-                {props.dataNew && isConnected && timeSinceGetData !== 0 ? (
+                {props.dataNew && timeSinceGetData !== 0 ? (
                     <>
                         <img src={Refresh} className="refresh-icon"></img>
                         Updated {timeSinceGetData} seconds ago
